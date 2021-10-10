@@ -121,7 +121,7 @@ class Calculator: NSObject {
         },
         "EE":Operation.BinaryOp{
             (op1,op2) in
-            return op1*Decimal.init(pow(10,NSDecimalNumber(decimal: op2).doubleValue))
+            return (op2 < 145 && op2 > -108 ? op1*Decimal.init(pow(10,NSDecimalNumber(decimal: op2).doubleValue)) : nil)
         },
         "sinh":Operation.UnaryOp{
             op1 in
